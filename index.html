@@ -309,11 +309,15 @@
 </div>
 
             <div class="form-group">
-              <label for="serviceAreas">Service Areas</label>
-              <textarea id="serviceAreas" name="serviceAreas" 
-                        placeholder="e.g., Dallas, Plano, Frisco, McKinney, Allen"></textarea>
-              <small class="help-text">Which cities or areas do you serve?</small>
-            </div>
+  <label for="serviceAreas">Service Areas</label>
+  <div id="serviceAreaMapper" class="service-area-mapper">
+    <input type="text" id="cityInput" placeholder="Enter a city or zip code">
+    <button type="button" id="addCity">Add</button>
+    <div id="selectedAreas" class="selected-areas"></div>
+  </div>
+  <input type="hidden" id="serviceAreas" name="serviceAreas">
+  <small class="help-text">Enter cities or zip codes you serve. Click to remove.</small>
+</div>
 
             <div class="form-group">
               <label>Business Features</label>
@@ -1851,20 +1855,20 @@
               <label>Services Layout Style *</label>
               <div class="layout-examples">
                 <label class="layout-example">
-                  <input
-                    type="radio"
-                    name="servicesLayout"
-                    value="cards-grid"
-                  />
-                  <div class="layout-preview">
-                    <div class="services-demo grid">
-                      <div class="service-card">Service 1</div>
-                      <div class="service-card">Service 2</div>
-                      <div class="service-card">Service 3</div>
-                    </div>
-                    <strong>Cards in Grid</strong>
-                  </div>
-                </label>
+  <input
+    type="radio"
+    name="servicesLayout"
+    value="cards-grid"
+  />
+  <div class="layout-preview">
+    <div class="services-demo grid">
+      <div class="service-card">Service 1</div>
+      <div class="service-card">Service 2</div>
+      <div class="service-card">Service 3</div>
+    </div>
+    <strong>Cards in Grid</strong>
+  </div>
+</label>
                 <label class="layout-example">
                   <input
                     type="radio"
@@ -2233,29 +2237,121 @@
           </div>
 
           <div class="subsection">
-            <h3>Gallery Images</h3>
-            <div class="form-group">
-              <label for="galleryImages">Portfolio/Gallery Images</label>
-              <div class="image-upload-area multiple">
-                <input
-                  type="file"
-                  id="galleryImages"
-                  name="galleryImages"
-                  accept="image/*"
-                  multiple
-                />
-                <div class="upload-placeholder">
-                  <i class="fas fa-cloud-upload-alt"></i>
-                  <p>Upload multiple gallery images</p>
-                  <small>Hold Ctrl/Cmd to select multiple files</small>
-                </div>
-              </div>
-              <textarea
-                placeholder="Or describe the types of images you want in your gallery (e.g., before/after photos, completed projects, team at work)"
-                class="image-description"
-              ></textarea>
+  <h3>Gallery Images</h3>
+  
+  <!-- Before/After Gallery Section -->
+  <div class="before-after-gallery">
+    <h4><i class="fas fa-exchange-alt"></i> Before/After Project Gallery</h4>
+    <p class="gallery-description">Perfect for showcasing transformations and completed projects</p>
+    
+    <div id="beforeAfterProjects" class="before-after-projects">
+      <!-- Project 1 -->
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-number">
+            <i class="fas fa-hammer"></i>
+            <span>Project 1</span>
+          </div>
+          <div class="project-optional">Optional</div>
+        </div>
+        
+        <div class="project-content">
+          <div class="project-basic-info">
+            <div class="input-group">
+              <label for="project1Name">Project Name</label>
+              <input type="text" id="project1Name" name="project1Name" 
+                     placeholder="e.g., Kitchen Renovation, Bathroom Remodel">
+            </div>
+            <div class="input-group">
+              <label for="project1Category">Project Category</label>
+              <select id="project1Category" name="project1Category">
+                <option value="">Select category</option>
+                <option value="kitchen">Kitchen</option>
+                <option value="bathroom">Bathroom</option>
+                <option value="exterior">Exterior</option>
+                <option value="landscaping">Landscaping</option>
+                <option value="electrical">Electrical Work</option>
+                <option value="plumbing">Plumbing</option>
+                <option value="hvac">HVAC</option>
+                <option value="painting">Painting</option>
+                <option value="roofing">Roofing</option>
+                <option value="other">Other</option>
+              </select>
             </div>
           </div>
+          
+          <div class="project-description">
+            <label for="project1Description">Project Description</label>
+            <textarea id="project1Description" name="project1Description" 
+                      placeholder="Describe what was done in this project..." 
+                      rows="3"></textarea>
+          </div>
+          
+          <div class="before-after-images">
+            <div class="image-pair">
+              <div class="before-image">
+                <label>Before Image</label>
+                <div class="image-upload-area compact">
+                  <input type="file" id="project1Before" name="project1Before" accept="image/*">
+                  <div class="upload-placeholder">
+                    <i class="fas fa-image"></i>
+                    <span>Before</span>
+                  </div>
+                </div>
+              </div>
+              <div class="after-image">
+                <label>After Image</label>
+                <div class="image-upload-area compact">
+                  <input type="file" id="project1After" name="project1After" accept="image/*">
+                  <div class="upload-placeholder">
+                    <i class="fas fa-image"></i>
+                    <span>After</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="project-actions">
+            <button type="button" class="remove-project-btn" onclick="this.closest('.project-card').remove()">
+              <i class="fas fa-trash"></i> Remove Project
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <button type="button" class="add-project-btn" onclick="addNewProject()">
+  <i class="fas fa-plus"></i>
+  <span>Add Another Project</span>
+</button>
+
+  <!-- Regular Gallery Section -->
+  <div class="regular-gallery" style="margin-top: 2rem;">
+    <h4><i class="fas fa-images"></i> Additional Gallery Images</h4>
+    <div class="form-group">
+      <label for="galleryImages">General Portfolio Images</label>
+      <div class="image-upload-area multiple">
+        <input
+          type="file"
+          id="galleryImages"
+          name="galleryImages"
+          accept="image/*"
+          multiple
+        />
+        <div class="upload-placeholder">
+          <i class="fas fa-cloud-upload-alt"></i>
+          <p>Upload multiple gallery images</p>
+          <small>Hold Ctrl/Cmd to select multiple files</small>
+        </div>
+      </div>
+      <textarea
+        placeholder="Or describe the types of images you want in your gallery (e.g., team at work, equipment, office)"
+        class="image-description"
+      ></textarea>
+    </div>
+  </div>
+</div>
 
           <div class="subsection">
             <h3>Image Style Preferences</h3>
