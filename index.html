@@ -1,0 +1,2849 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website Template Builder</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+  <div class="container">
+    <div class="header-top">
+      <div class="header-content">
+        <h1><i class="fas fa-code"></i> Website Template Builder</h1>
+        <p>Fill out this comprehensive template to get your perfect website</p>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="Toggle dark/light mode">
+        <i class="fas fa-moon" id="themeIcon"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <main class="main-content">
+      <form id="websiteTemplate" class="template-form">
+        <!-- Section 1: Business Information -->
+        <section class="form-section active" data-section="1">
+          <div class="section-header">
+            <h2><i class="fas fa-building"></i> 1. Business Information</h2>
+            <p class="section-description">
+              Tell us about your business. This information will be used
+              throughout your website for branding and contact purposes.
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label for="businessName">Business Name *</label>
+            <input
+              type="text"
+              id="businessName"
+              name="businessName"
+              placeholder="e.g., Mike's Auto Detailing"
+              required
+            />
+            <small class="help-text"
+              >This will appear in your logo area and page titles</small
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="tagline">Tagline/Slogan</label>
+            <input
+              type="text"
+              id="tagline"
+              name="tagline"
+              placeholder="e.g., Premium Care for Your Vehicle"
+            />
+            <small class="help-text"
+              >A short, catchy phrase that describes what you do
+              (optional)</small
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="industry">Industry Type *</label>
+            <select id="industry" name="industry" required>
+  <option value="">Select your industry</option>
+  <option value="electrical">Electrical Services</option>
+  <option value="plumbing">Plumbing Services</option>
+  <option value="construction">Construction/Building</option>
+  <option value="landscaping">Landscaping/Gardening</option>
+  <option value="hvac">HVAC Services</option>
+  <option value="painting">Painting Services</option>
+  <option value="roofing">Roofing Services</option>
+  <option value="automotive">Automotive</option>
+  <option value="restaurant">Restaurant/Food</option>
+  <option value="fitness">Fitness/Gym</option>
+  <option value="beauty">Beauty/Salon</option>
+  <option value="legal">Legal/Law Firm</option>
+  <option value="medical">Medical/Healthcare</option>
+  <option value="real-estate">Real Estate</option>
+  <option value="photography">Photography</option>
+  <option value="consulting">Consulting</option>
+  <option value="retail">Retail</option>
+  <option value="other">Other</option>
+</select>
+            <small class="help-text"
+              >This helps us suggest appropriate designs and features</small
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="targetAudience">Target Audience</label>
+            <textarea
+              id="targetAudience"
+              name="targetAudience"
+              placeholder="e.g., Car owners who value premium service, ages 25-55, middle to high income"
+            ></textarea>
+            <small class="help-text"
+              >Describe who your ideal customers are</small
+            >
+          </div>
+
+          <div class="form-group">
+            <label>Brand Personality *</label>
+            <small class="help-text"
+              >How do you want your business to be perceived?</small
+            >
+            <div class="checkbox-grid">
+              <label class="checkbox-item">
+                <input
+                  type="radio"
+                  name="brandPersonality"
+                  value="professional"
+                  required
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Professional</strong>
+                  <small>Trustworthy, reliable, corporate</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input
+                  type="radio"
+                  name="brandPersonality"
+                  value="modern"
+                  required
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Modern</strong>
+                  <small>Cutting-edge, innovative, tech-savvy</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input
+                  type="radio"
+                  name="brandPersonality"
+                  value="playful"
+                  required
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Playful</strong>
+                  <small>Fun, energetic, approachable</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input
+                  type="radio"
+                  name="brandPersonality"
+                  value="luxury"
+                  required
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Luxury</strong>
+                  <small>Premium, exclusive, high-end</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input
+                  type="radio"
+                  name="brandPersonality"
+                  value="minimalist"
+                  required
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Minimalist</strong>
+                  <small>Clean, simple, uncluttered</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input
+                  type="radio"
+                  name="brandPersonality"
+                  value="bold"
+                  required
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Bold</strong>
+                  <small>Eye-catching, confident, standout</small>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="contact-info-section">
+            <h3>Contact Information</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="(555) 123-4567"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="info@yourbusiness.com"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="address">Business Address</label>
+              <textarea
+                id="address"
+                name="address"
+                placeholder="123 Main Street, City, State 12345"
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="hours">Business Hours</label>
+              <textarea
+                id="hours"
+                name="hours"
+                placeholder="Mon-Fri: 8AM-6PM, Sat: 9AM-4PM, Sun: Closed"
+              ></textarea>
+            </div>
+
+            <h4>Social Media Links (Optional)</h4>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="facebook"
+                  ><i class="fab fa-facebook"></i> Facebook</label
+                >
+                <input
+                  type="url"
+                  id="facebook"
+                  name="facebook"
+                  placeholder="https://facebook.com/yourbusiness"
+                />
+              </div>
+              <div class="form-group">
+                <label for="instagram"
+                  ><i class="fab fa-instagram"></i> Instagram</label
+                >
+                <input
+                  type="url"
+                  id="instagram"
+                  name="instagram"
+                  placeholder="https://instagram.com/yourbusiness"
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="twitter"
+                  ><i class="fab fa-twitter"></i> Twitter</label
+                >
+                <input
+                  type="url"
+                  id="twitter"
+                  name="twitter"
+                  placeholder="https://twitter.com/yourbusiness"
+                />
+              </div>
+              <div class="form-group">
+                <label for="linkedin"
+                  ><i class="fab fa-linkedin"></i> LinkedIn</label
+                >
+                <input
+                  type="url"
+                  id="linkedin"
+                  name="linkedin"
+                  placeholder="https://linkedin.com/company/yourbusiness"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- Service Trade Specific Fields -->
+          <div id="serviceTradeFields" class="service-trade-section" style="display: none;">
+            <h4><i class="fas fa-tools"></i> Service Business Details</h4>
+            
+            <div class="form-row">
+  <div class="form-group" style="flex: 1;">
+    <label for="yearsInBusiness">Years in Business</label>
+    <input type="text" id="yearsInBusiness" name="yearsInBusiness" 
+           placeholder="e.g., 15" pattern="[0-9]*" inputmode="numeric">
+    <small class="help-text">How long have you been in business?</small>
+  </div>
+  <div class="form-group" style="flex: 1;">
+    <label for="licenseNumber">License Number (if applicable)</label>
+    <input type="text" id="licenseNumber" name="licenseNumber" 
+           placeholder="e.g., EL-12345">
+    <small class="help-text">Professional license or certification number</small>
+  </div>
+</div>
+
+            <div class="form-group">
+              <label for="serviceAreas">Service Areas</label>
+              <textarea id="serviceAreas" name="serviceAreas" 
+                        placeholder="e.g., Dallas, Plano, Frisco, McKinney, Allen"></textarea>
+              <small class="help-text">Which cities or areas do you serve?</small>
+            </div>
+
+            <div class="form-group">
+              <label>Business Features</label>
+              <small class="help-text">Select all that apply to your business</small>
+              <div class="checkbox-grid">
+                <label class="checkbox-item">
+                  <input type="checkbox" name="businessFeatures" value="emergency-service">
+                  <span class="checkmark"></span>
+                  <div class="option-content">
+                    <strong>24/7 Emergency Service</strong>
+                    <small>Available for urgent calls anytime</small>
+                  </div>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="businessFeatures" value="free-estimates">
+                  <span class="checkmark"></span>
+                  <div class="option-content">
+                    <strong>Free Estimates</strong>
+                    <small>No charge for quotes or consultations</small>
+                  </div>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="businessFeatures" value="licensed-insured">
+                  <span class="checkmark"></span>
+                  <div class="option-content">
+                    <strong>Licensed & Insured</strong>
+                    <small>Fully licensed and liability insured</small>
+                  </div>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="businessFeatures" value="warranty-guarantee">
+                  <span class="checkmark"></span>
+                  <div class="option-content">
+                    <strong>Work Warranty/Guarantee</strong>
+                    <small>Stand behind work with guarantees</small>
+                  </div>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="businessFeatures" value="family-owned">
+                  <span class="checkmark"></span>
+                  <div class="option-content">
+                    <strong>Family Owned & Operated</strong>
+                    <small>Local family business</small>
+                  </div>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="businessFeatures" value="senior-discount">
+                  <span class="checkmark"></span>
+                  <div class="option-content">
+                    <strong>Senior/Military Discounts</strong>
+                    <small>Special pricing for seniors or veterans</small>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="certifications">Certifications & Specializations</label>
+              <textarea id="certifications" name="certifications" 
+                        placeholder="e.g., Master Electrician, HVAC Certified, EPA Licensed"></textarea>
+              <small class="help-text">Professional certifications, specializations, or training</small>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 2: Website Structure -->
+        <section class="form-section" data-section="2">
+          <div class="section-header">
+            <h2><i class="fas fa-sitemap"></i> 2. Website Structure & Pages</h2>
+            <p class="section-description">
+              Choose which pages you need and how your navigation should work.
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label>Main Pages Needed *</label>
+            <small class="help-text"
+              >Select all pages you want on your website</small
+            >
+            <div class="checkbox-grid">
+              <label class="checkbox-item">
+                <input type="checkbox" name="pages" value="home" checked />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Home/Landing Page</strong>
+                  <small>Main page visitors see first</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="pages" value="about" />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>About Us</strong>
+                  <small>Your story, mission, team</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="pages" value="services" />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Services/Products</strong>
+                  <small>What you offer</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="pages" value="portfolio" />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Portfolio/Gallery</strong>
+                  <small>Showcase your work</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="pages" value="testimonials" />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Testimonials/Reviews</strong>
+                  <small>Customer feedback</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="pages" value="contact" />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Contact</strong>
+                  <small>Contact form and info</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="pages" value="blog" />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Blog</strong>
+                  <small>Articles and updates</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="pages" value="faq" />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>FAQ</strong>
+                  <small>Frequently asked questions</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="pages" value="pricing" />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Pricing</strong>
+                  <small>Service costs and packages</small>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="customPage">Custom Page (Optional)</label>
+            <input
+              type="text"
+              id="customPage"
+              name="customPage"
+              placeholder="e.g., Careers, Resources, etc."
+            />
+            <small class="help-text">Any additional page you need</small>
+          </div>
+
+          <div class="form-group">
+            <label>Navigation Style *</label>
+            <small class="help-text"
+              >How should your menu look and behave?</small
+            >
+            <div class="navigation-examples">
+              <label class="nav-example">
+                <input
+                  type="radio"
+                  name="navigationStyle"
+                  value="horizontal-top"
+                  required
+                />
+                <div class="nav-preview">
+                  <div class="nav-demo nav-horizontal">
+                    <div class="nav-logo">LOGO</div>
+                    <div class="nav-menu">
+                      <span>Home</span>
+                      <span>About</span>
+                      <span>Services</span>
+                      <span>Contact</span>
+                    </div>
+                  </div>
+                  <strong>Horizontal Top Navigation</strong>
+                  <small>Traditional menu across the top</small>
+                </div>
+              </label>
+
+              <label class="nav-example">
+                <input
+                  type="radio"
+                  name="navigationStyle"
+                  value="sticky-navigation"
+                  required
+                />
+                <div class="nav-preview">
+                  <div class="nav-demo nav-sticky">
+                    <div class="nav-logo">LOGO</div>
+                    <div class="nav-menu">
+                      <span>Home</span>
+                      <span>About</span>
+                      <span>Services</span>
+                      <span>Contact</span>
+                    </div>
+                    <div class="sticky-indicator">
+                      Follows you when scrolling
+                    </div>
+                  </div>
+                  <strong>Sticky/Fixed Navigation</strong>
+                  <small>Menu stays at top when scrolling</small>
+                </div>
+              </label>
+
+              <label class="nav-example">
+                <input
+                  type="radio"
+                  name="navigationStyle"
+                  value="hamburger-menu"
+                  required
+                />
+                <div class="nav-preview">
+                  <div class="nav-demo nav-hamburger">
+                    <div class="nav-logo">LOGO</div>
+                    <div class="hamburger-icon">☰</div>
+                  </div>
+                  <strong>Hamburger Menu</strong>
+                  <small>Mobile-style menu (3 lines)</small>
+                </div>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 3: Design & Layout -->
+        <section class="form-section" data-section="3">
+          <div class="section-header">
+            <h2>
+              <i class="fas fa-paint-brush"></i> 3. Design & Layout Preferences
+            </h2>
+            <p class="section-description">
+              Choose how your website should look and feel.
+            </p>
+          </div>
+
+          <div class="subsection">
+            <h3>Header Section</h3>
+            <small class="help-text"
+              >The top area of your website with logo and navigation</small
+            >
+
+            <div class="form-group">
+              <label>Header Layout *</label>
+              <div class="layout-examples">
+                <label class="layout-example">
+                  <input
+                    type="radio"
+                    name="headerLayout"
+                    value="logo-left-menu-right"
+                    required
+                  />
+                  <div class="layout-preview">
+                    <div class="header-demo">
+                      <div class="logo-area">LOGO</div>
+                      <div class="menu-area">MENU</div>
+                    </div>
+                    <strong>Logo Left, Menu Right</strong>
+                  </div>
+                </label>
+
+                <label class="layout-example">
+                  <input
+                    type="radio"
+                    name="headerLayout"
+                    value="logo-center-menu-below"
+                    required
+                  />
+                  <div class="layout-preview">
+                    <div class="header-demo header-center">
+                      <div class="logo-area centered">LOGO</div>
+                      <div class="menu-area centered">MENU</div>
+                    </div>
+                    <strong>Logo Center, Menu Below</strong>
+                  </div>
+                </label>
+
+                <label class="layout-example">
+                  <input
+                    type="radio"
+                    name="headerLayout"
+                    value="logo-menu-contact"
+                    required
+                  />
+                  <div class="layout-preview">
+                    <div class="header-demo header-three">
+                      <div class="logo-area">LOGO</div>
+                      <div class="menu-area">MENU</div>
+                      <div class="contact-area">CONTACT</div>
+                    </div>
+                    <strong>Logo Left, Menu Center, Contact Right</strong>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Header Behavior *</label>
+              <small class="help-text"
+                >How should the header act when users scroll?</small
+              >
+              <div class="checkbox-grid">
+                <label class="checkbox-item">
+                  <input
+                    type="radio"
+                    name="headerBehavior"
+                    value="static"
+                    required
+                  />
+                  <span class="checkmark"></span>
+                  <div class="option-content">
+                    <strong>Static</strong>
+                    <small>Stays in place, scrolls away</small>
+                  </div>
+                </label>
+                <label class="checkbox-item">
+                  <input
+                    type="radio"
+                    name="headerBehavior"
+                    value="sticky"
+                    required
+                  />
+                  <span class="checkmark"></span>
+                  <div class="option-content">
+                    <strong>Sticky</strong>
+                    <small>Follows user down the page</small>
+                  </div>
+                </label>
+                <label class="checkbox-item">
+                  <input
+                    type="radio"
+                    name="headerBehavior"
+                    value="shrinking"
+                    required
+                  />
+                  <span class="checkmark"></span>
+                  <div class="option-content">
+                    <strong>Shrinking</strong>
+                    <small>Gets smaller when scrolling</small>
+                  </div>
+                </label>
+                <label class="checkbox-item">
+                  <input
+                    type="radio"
+                    name="headerBehavior"
+                    value="transparent"
+                    required
+                  />
+                  <span class="checkmark"></span>
+                  <div class="option-content">
+                    <strong>Transparent</strong>
+                    <small>See-through over hero section</small>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <h3>Hero Section</h3>
+            <small class="help-text"
+              >The large banner area at the top of your homepage - first thing
+              visitors see</small
+            >
+
+            <div class="form-group">
+              <label>Hero Style *</label>
+              <div class="hero-examples">
+                <label class="hero-example">
+                  <input
+                    type="radio"
+                    name="heroStyle"
+                    value="fullscreen-image"
+                    required
+                  />
+                  <div class="hero-preview">
+                    <div class="hero-demo hero-fullscreen">
+                      <div class="hero-content">
+                        <h3>Your Headline</h3>
+                        <p>Subtext here</p>
+                        <button>Call to Action</button>
+                      </div>
+                    </div>
+                    <strong>Full-Screen Background Image</strong>
+                  </div>
+                </label>
+
+                <label class="hero-example">
+                  <input
+                    type="radio"
+                    name="heroStyle"
+                    value="split-screen"
+                    required
+                  />
+                  <div class="hero-preview">
+                    <div class="hero-demo hero-split">
+                      <div class="hero-text">
+                        <h3>Your Text</h3>
+                        <p>Description</p>
+                        <button>Button</button>
+                      </div>
+                      <div class="hero-image">IMAGE</div>
+                    </div>
+                    <strong>Split Screen (Text + Image)</strong>
+                  </div>
+                </label>
+
+                <label class="hero-example">
+                  <input
+                    type="radio"
+                    name="heroStyle"
+                    value="centered-content"
+                    required
+                  />
+                  <div class="hero-preview">
+                    <div class="hero-demo hero-centered">
+                      <div class="hero-content centered">
+                        <h3>Centered Headline</h3>
+                        <p>Centered subtext</p>
+                        <button>Call to Action</button>
+                      </div>
+                    </div>
+                    <strong>Centered Content</strong>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+  <label for="heroHeadline">Main Headline *</label>
+  <div class="copywriting-helper">
+    <input
+      type="text"
+      id="heroHeadline"
+      name="heroHeadline"
+      placeholder="e.g., Premium Auto Detailing Services"
+      required
+    />
+    <button type="button" id="suggestHeadline" class="suggest-copy-btn" style="display: none;">
+      <i class="fas fa-lightbulb"></i> Suggest
+    </button>
+  </div>
+  <small class="help-text"
+    >The big, bold text visitors see first</small
+  >
+</div>
+
+            <div class="form-group">
+  <label for="heroSubheadline">Subheadline</label>
+  <div class="copywriting-helper">
+    <input
+      type="text"
+      id="heroSubheadline"
+      name="heroSubheadline"
+      placeholder="e.g., Professional car care that makes your vehicle shine like new"
+    />
+    <button type="button" id="suggestSubheadline" class="suggest-copy-btn" style="display: none;">
+      <i class="fas fa-lightbulb"></i> Suggest
+    </button>
+  </div>
+  <small class="help-text"
+    >Supporting text under your main headline</small
+  >
+</div>
+
+            <div class="form-group">
+  <label for="ctaButtonText">Call-to-Action Button Text *</label>
+  <div class="copywriting-helper">
+    <input
+      type="text"
+      id="ctaButtonText"
+      name="ctaButtonText"
+      placeholder="e.g., Get Free Quote"
+      required
+    />
+    <button type="button" id="suggestCTA" class="suggest-copy-btn" style="display: none;">
+      <i class="fas fa-lightbulb"></i> Suggest
+    </button>
+  </div>
+  <small class="help-text">Text on your main action button</small>
+</div>
+
+            <div class="form-group">
+              <label>What happens when the button is clicked? *</label>
+              <div class="checkbox-grid">
+                <label class="checkbox-item">
+                  <input
+                    type="radio"
+                    name="ctaAction"
+                    value="scroll-to-contact"
+                    required
+                  />
+                  <span class="checkmark"></span>
+                  <div class="option-content">
+                    <strong>Scroll to Contact Form</strong>
+                    <small>Smoothly scrolls down to contact section</small>
+                  </div>
+                </label>
+                <label class="checkbox-item">
+                  <input
+                    type="radio"
+                    name="ctaAction"
+                    value="open-contact-modal"
+                    required
+                  />
+                  <span class="checkmark"></span>
+                  <div class="option-content">
+                    <strong>Open Contact Modal</strong>
+                    <small>Popup window with contact form</small>
+                  </div>
+                </label>
+                <label class="checkbox-item">
+                  <input
+                    type="radio"
+                    name="ctaAction"
+                    value="go-to-services"
+                    required
+                  />
+                  <span class="checkmark"></span>
+                  <div class="option-content">
+                    <strong>Go to Services Page</strong>
+                    <small>Navigate to services/products page</small>
+                  </div>
+                </label>
+                <label class="checkbox-item">
+                  <input
+                    type="radio"
+                    name="ctaAction"
+                    value="call-phone"
+                    required
+                  />
+                  <span class="checkmark"></span>
+                  <div class="option-content">
+                    <strong>Call Phone Number</strong>
+                    <small>Opens phone app with your number</small>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="ctaOther">Other Action (if not listed above)</label>
+              <input
+                type="text"
+                id="ctaOther"
+                name="ctaOther"
+                placeholder="Describe what should happen"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 4: Colors & Styling -->
+        <section class="form-section" data-section="4">
+          <div class="section-header">
+            <h2><i class="fas fa-palette"></i> 4. Colors & Styling</h2>
+            <p class="section-description">
+              Choose your website's color scheme and visual style.
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label>Color Mood *</label>
+            <small class="help-text"
+              >Choose a color scheme that matches your brand personality</small
+            >
+            <div class="color-schemes">
+              <label class="color-scheme">
+                <input
+                  type="radio"
+                  name="colorMood"
+                  value="professional"
+                  required
+                />
+                <div class="color-preview">
+                  <div class="color-palette">
+                    <div class="color-swatch" style="background: #2c5aa0"></div>
+                    <div class="color-swatch" style="background: #4a90e2"></div>
+                    <div class="color-swatch" style="background: #f8f9fa"></div>
+                    <div class="color-swatch" style="background: #333333"></div>
+                  </div>
+                  <strong>Professional & Corporate</strong>
+                  <small>Blues, grays - trustworthy, reliable</small>
+                </div>
+              </label>
+
+              <label class="color-scheme">
+                <input type="radio" name="colorMood" value="warm" required />
+                <div class="color-preview">
+                  <div class="color-palette">
+                    <div class="color-swatch" style="background: #ff6b35"></div>
+                    <div class="color-swatch" style="background: #f7931e"></div>
+                    <div class="color-swatch" style="background: #fff8f0"></div>
+                    <div class="color-swatch" style="background: #8b4513"></div>
+                  </div>
+                  <strong>Warm & Friendly</strong>
+                  <small>Oranges, yellows - welcoming, energetic</small>
+                </div>
+              </label>
+
+              <label class="color-scheme">
+                <input type="radio" name="colorMood" value="luxury" required />
+                <div class="color-preview">
+                  <div class="color-palette">
+                    <div class="color-swatch" style="background: #000000"></div>
+                    <div class="color-swatch" style="background: #d4af37"></div>
+                    <div class="color-swatch" style="background: #f5f5f5"></div>
+                    <div class="color-swatch" style="background: #8b7355"></div>
+                  </div>
+                  <strong>Luxury & Premium</strong>
+                  <small>Black, gold - exclusive, high-end</small>
+                </div>
+              </label>
+
+              <label class="color-scheme">
+                <input type="radio" name="colorMood" value="natural" required />
+                <div class="color-preview">
+                  <div class="color-palette">
+                    <div class="color-swatch" style="background: #2d5016"></div>
+                    <div class="color-swatch" style="background: #4caf50"></div>
+                    <div class="color-swatch" style="background: #f1f8e9"></div>
+                    <div class="color-swatch" style="background: #8d6e63"></div>
+                  </div>
+                  <strong>Natural & Organic</strong>
+                  <small>Greens, browns - eco-friendly, natural</small>
+                </div>
+              </label>
+
+              <label class="color-scheme">
+                <input
+                  type="radio"
+                  name="colorMood"
+                  value="creative"
+                  required
+                />
+                <div class="color-preview">
+                  <div class="color-palette">
+                    <div class="color-swatch" style="background: #e91e63"></div>
+                    <div class="color-swatch" style="background: #9c27b0"></div>
+                    <div class="color-swatch" style="background: #fff3e0"></div>
+                    <div class="color-swatch" style="background: #ff5722"></div>
+                  </div>
+                  <strong>Creative & Bold</strong>
+                  <small>Bright colors - artistic, standout</small>
+                </div>
+              </label>
+
+              <label class="color-scheme">
+                <input
+                  type="radio"
+                  name="colorMood"
+                  value="minimalist"
+                  required
+                />
+                <div class="color-preview">
+                  <div class="color-palette">
+                    <div class="color-swatch" style="background: #ffffff"></div>
+                    <div class="color-swatch" style="background: #f5f5f5"></div>
+                    <div class="color-swatch" style="background: #e0e0e0"></div>
+                    <div class="color-swatch" style="background: #424242"></div>
+                  </div>
+                  <strong>Minimalist & Clean</strong>
+                  <small>Whites, light grays - simple, clean</small>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="custom-colors">
+            <h3>Custom Colors (Optional)</h3>
+            <small class="help-text"
+              >If you have specific brand colors, enter them here. Leave blank
+              to use the color mood above.</small
+            >
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="primaryColor">Primary Color</label>
+                <div class="color-input">
+                  <input type="color" id="primaryColor" name="primaryColor" />
+                  <input
+                    type="text"
+                    placeholder="#0066cc or blue"
+                    class="color-text"
+                  />
+                </div>
+                <small class="help-text"
+                  >Main brand color (buttons, links)</small
+                >
+              </div>
+              <div class="form-group">
+                <label for="secondaryColor">Secondary Color</label>
+                <div class="color-input">
+                  <input
+                    type="color"
+                    id="secondaryColor"
+                    name="secondaryColor"
+                  />
+                  <input
+                    type="text"
+                    placeholder="#ff6600 or orange"
+                    class="color-text"
+                  />
+                </div>
+                <small class="help-text"
+                  >Accent color (highlights, icons)</small
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Typography Style *</label>
+            <small class="help-text">What style of fonts do you prefer?</small>
+            <div class="typography-examples">
+              <label class="typography-example">
+                <input
+                  type="radio"
+                  name="fontStyle"
+                  value="modern-clean"
+                  required
+                />
+                <div class="font-preview">
+                  <div
+                    class="font-demo"
+                    style="font-family: 'Arial', sans-serif"
+                  >
+                    <h3>Modern Heading</h3>
+                    <p>Clean, readable body text that's easy on the eyes.</p>
+                  </div>
+                  <strong>Modern & Clean</strong>
+                  <small>Sans-serif fonts - contemporary, professional</small>
+                </div>
+              </label>
+
+              <label class="typography-example">
+                <input
+                  type="radio"
+                  name="fontStyle"
+                  value="classic-professional"
+                  required
+                />
+                <div class="font-preview">
+                  <div
+                    class="font-demo"
+                    style="font-family: 'Times New Roman', serif"
+                  >
+                    <h3>Classic Heading</h3>
+                    <p>Traditional, trustworthy text with serif details.</p>
+                  </div>
+                  <strong>Classic & Professional</strong>
+                  <small>Serif fonts - traditional, trustworthy</small>
+                </div>
+              </label>
+
+              <label class="typography-example">
+                <input
+                  type="radio"
+                  name="fontStyle"
+                  value="creative-unique"
+                  required
+                />
+                <div class="font-preview">
+                  <div
+                    class="font-demo"
+                    style="font-family: 'Impact', sans-serif; font-weight: bold"
+                  >
+                    <h3>Creative Heading</h3>
+                    <p
+                      style="
+                        font-family: 'Arial', sans-serif;
+                        font-weight: normal;
+                      "
+                    >
+                      Unique headings with readable body text.
+                    </p>
+                  </div>
+                  <strong>Creative & Unique</strong>
+                  <small
+                    >Display fonts for headings - artistic, memorable</small
+                  >
+                </div>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 5: Animations & Interactions -->
+        <section class="form-section" data-section="5">
+          <div class="section-header">
+            <h2><i class="fas fa-magic"></i> 5. Animations & Interactions</h2>
+            <p class="section-description">
+              Choose how elements should move and interact on your website.
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label>Scroll Animations *</label>
+            <small class="help-text"
+              >How should content appear as users scroll down your page?</small
+            >
+            <div class="animation-examples">
+              <label class="animation-example">
+                <input
+                  type="checkbox"
+                  name="scrollAnimations"
+                  value="fade-in"
+                />
+                <div class="animation-preview">
+                  <div class="animation-demo fade-in-demo">
+                    <div class="demo-element">Content fades in</div>
+                  </div>
+                  <strong>Fade In</strong>
+                  <small>Elements gradually appear</small>
+                </div>
+              </label>
+
+              <label class="animation-example">
+                <input
+                  type="checkbox"
+                  name="scrollAnimations"
+                  value="slide-in"
+                />
+                <div class="animation-preview">
+                  <div class="animation-demo slide-in-demo">
+                    <div class="demo-element">Content slides in</div>
+                  </div>
+                  <strong>Slide In</strong>
+                  <small>Elements move in from sides</small>
+                </div>
+              </label>
+
+              <label class="animation-example">
+                <input
+                  type="checkbox"
+                  name="scrollAnimations"
+                  value="scale-up"
+                />
+                <div class="animation-preview">
+                  <div class="animation-demo scale-up-demo">
+                    <div class="demo-element">Content grows</div>
+                  </div>
+                  <strong>Scale Up</strong>
+                  <small>Elements grow as they appear</small>
+                </div>
+              </label>
+
+              <label class="animation-example">
+                <input
+                  type="checkbox"
+                  name="scrollAnimations"
+                  value="stagger"
+                />
+                <div class="animation-preview">
+                  <div class="animation-demo stagger-demo">
+                    <div class="demo-element small">1</div>
+                    <div class="demo-element small">2</div>
+                    <div class="demo-element small">3</div>
+                  </div>
+                  <strong>Stagger</strong>
+                  <small>Elements appear one by one</small>
+                </div>
+              </label>
+
+              <label class="animation-example">
+                <input
+                  type="checkbox"
+                  name="scrollAnimations"
+                  value="parallax"
+                />
+                <div class="animation-preview">
+                  <div class="animation-demo parallax-demo">
+                    <div class="demo-bg">Background</div>
+                    <div class="demo-element">Foreground</div>
+                  </div>
+                  <strong>Parallax</strong>
+                  <small>Background moves slower</small>
+                </div>
+              </label>
+
+              <label class="animation-example">
+                <input type="checkbox" name="scrollAnimations" value="none" />
+                <div class="animation-preview">
+                  <div class="animation-demo static-demo">
+                    <div class="demo-element">Static content</div>
+                  </div>
+                  <strong>No Animations</strong>
+                  <small>Prefer static, fast-loading</small>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Navigation Behavior *</label>
+            <small class="help-text"
+              >How should your navigation menu behave?</small
+            >
+            <div class="checkbox-grid">
+              <label class="checkbox-item">
+                <input
+                  type="checkbox"
+                  name="navigationBehavior"
+                  value="smooth-scroll"
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Smooth Scroll</strong>
+                  <small
+                    >Clicking menu items smoothly scrolls to sections</small
+                  >
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input
+                  type="checkbox"
+                  name="navigationBehavior"
+                  value="hover-effects"
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Hover Effects</strong>
+                  <small>Menu items change when mouse hovers over them</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input
+                  type="checkbox"
+                  name="navigationBehavior"
+                  value="active-highlighting"
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Active State Highlighting</strong>
+                  <small
+                    >Shows which page/section user is currently viewing</small
+                  >
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Button & Interaction Effects *</label>
+            <small class="help-text"
+              >How should buttons and interactive elements behave?</small
+            >
+            <div class="button-effects">
+              <label class="effect-example">
+                <input
+                  type="checkbox"
+                  name="buttonEffects"
+                  value="hover-color"
+                />
+                <div class="effect-preview">
+                  <button class="demo-btn hover-color-demo">
+                    Hover Color Change
+                  </button>
+                  <small>Button changes color on hover</small>
+                </div>
+              </label>
+
+              <label class="effect-example">
+                <input
+                  type="checkbox"
+                  name="buttonEffects"
+                  value="hover-scale"
+                />
+                <div class="effect-preview">
+                  <button class="demo-btn hover-scale-demo">Hover Scale</button>
+                  <small>Button grows slightly on hover</small>
+                </div>
+              </label>
+
+              <label class="effect-example">
+                <input
+                  type="checkbox"
+                  name="buttonEffects"
+                  value="shadow-effects"
+                />
+                <div class="effect-preview">
+                  <button class="demo-btn shadow-demo">Shadow Effects</button>
+                  <small>Button gets shadow on hover</small>
+                </div>
+              </label>
+
+              <label class="effect-example">
+                <input
+                  type="checkbox"
+                  name="buttonEffects"
+                  value="gradient-hover"
+                />
+                <div class="effect-preview">
+                  <button class="demo-btn gradient-demo">Gradient Hover</button>
+                  <small>Gradient background on hover</small>
+                </div>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 6: Functionality & Forms -->
+        <section class="form-section" data-section="6">
+          <div class="section-header">
+            <h2><i class="fas fa-cogs"></i> 6. Functionality & Forms</h2>
+            <p class="section-description">
+              Choose what interactive features and forms your website needs.
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label>Forms Needed *</label>
+            <small class="help-text"
+              >Select all forms you want on your website</small
+            >
+            <div class="checkbox-grid">
+              <label class="checkbox-item">
+                <input type="checkbox" name="formsNeeded" value="contact" />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Contact Form</strong>
+                  <small>Basic contact form with name, email, message</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="formsNeeded" value="quote" />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Quote/Estimate Form</strong>
+                  <small>Request pricing for services</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="formsNeeded" value="newsletter" />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Newsletter Signup</strong>
+                  <small>Email subscription form</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="formsNeeded" value="appointment" />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Appointment Booking</strong>
+                  <small>Schedule appointments online</small>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="contactFormFields">Contact Form Fields</label>
+            <textarea
+              id="contactFormFields"
+              name="contactFormFields"
+              placeholder="e.g., Name, Email, Phone, Service Needed, Message, Preferred Contact Time"
+            ></textarea>
+            <small class="help-text"
+              >List the fields you want in your contact form</small
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="formDestination"
+              >Where should form submissions go?</label
+            >
+            <input
+              type="email"
+              id="formDestination"
+              name="formDestination"
+              placeholder="your-email@domain.com"
+            />
+            <small class="help-text"
+              >Email address to receive form submissions</small
+            >
+          </div>
+
+          <div class="form-group">
+            <label>Interactive Features *</label>
+            <small class="help-text"
+              >Select features you want on your website</small
+            >
+            <div class="checkbox-grid">
+              <label class="checkbox-item">
+                <input
+                  type="checkbox"
+                  name="interactiveFeatures"
+                  value="image-gallery"
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Image Gallery/Lightbox</strong>
+                  <small>Click images to view larger versions</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input
+                  type="checkbox"
+                  name="interactiveFeatures"
+                  value="modal-popups"
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Modal Popups</strong>
+                  <small>Popup windows for forms or info</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input
+                  type="checkbox"
+                  name="interactiveFeatures"
+                  value="accordion-faq"
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Accordion FAQ Section</strong>
+                  <small>Expandable questions and answers</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input
+                  type="checkbox"
+                  name="interactiveFeatures"
+                  value="image-carousel"
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Image Carousel/Slider</strong>
+                  <small>Rotating image slideshow</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input
+                  type="checkbox"
+                  name="interactiveFeatures"
+                  value="google-maps"
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Google Maps Integration</strong>
+                  <small>Embedded map showing your location</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input
+                  type="checkbox"
+                  name="interactiveFeatures"
+                  value="video-embeds"
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Video Embeds</strong>
+                  <small>YouTube/Vimeo videos on your site</small>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="videoLinks">Video Links (if selected above)</label>
+            <textarea
+              id="videoLinks"
+              name="videoLinks"
+              placeholder="https://youtube.com/watch?v=... (one per line)"
+            ></textarea>
+            <small class="help-text">YouTube or Vimeo links to embed</small>
+          </div>
+
+          <div class="form-group">
+            <label>Mobile Features *</label>
+            <small class="help-text">Mobile-specific features</small>
+            <div class="checkbox-grid">
+              <label class="checkbox-item">
+                <input
+                  type="checkbox"
+                  name="mobileFeatures"
+                  value="click-to-call"
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Click-to-Call Buttons</strong>
+                  <small>Tap phone number to call</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input
+                  type="checkbox"
+                  name="mobileFeatures"
+                  value="click-to-email"
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Click-to-Email Buttons</strong>
+                  <small>Tap email to open mail app</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input
+                  type="checkbox"
+                  name="mobileFeatures"
+                  value="gps-directions"
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>GPS Directions Button</strong>
+                  <small>Get directions to your business</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input
+                  type="checkbox"
+                  name="mobileFeatures"
+                  value="touch-friendly"
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Touch-Friendly Navigation</strong>
+                  <small>Large, easy-to-tap buttons</small>
+                </div>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 7: Content Sections -->
+        <section class="form-section" data-section="7">
+          <div class="section-header">
+            <h2><i class="fas fa-file-alt"></i> 7. Content Sections</h2>
+            <p class="section-description">
+              Provide the actual content for your website sections.
+            </p>
+          </div>
+
+          <div class="subsection">
+            <h3>About Section</h3>
+            <div class="form-group">
+              <label for="aboutHeadline">About Section Headline</label>
+              <input
+                type="text"
+                id="aboutHeadline"
+                name="aboutHeadline"
+                placeholder="e.g., About Our Company, Our Story, Why Choose Us"
+              />
+              <small class="help-text"
+                >Main heading for your about section</small
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="aboutText">About Section Text *</label>
+              <textarea
+                id="aboutText"
+                name="aboutText"
+                placeholder="Tell your story, explain your mission, describe your experience..."
+                rows="6"
+              ></textarea>
+              <small class="help-text"
+                >The main content for your about section</small
+              >
+            </div>
+
+            <div class="form-group">
+              <label>About Section Layout *</label>
+              <div class="layout-examples">
+                <label class="layout-example">
+                  <input
+                    type="radio"
+                    name="aboutLayout"
+                    value="text-left-image-right"
+                  />
+                  <div class="layout-preview">
+                    <div class="about-demo">
+                      <div class="about-text">TEXT</div>
+                      <div class="about-image">IMAGE</div>
+                    </div>
+                    <strong>Text Left, Image Right</strong>
+                  </div>
+                </label>
+                <label class="layout-example">
+                  <input
+                    type="radio"
+                    name="aboutLayout"
+                    value="text-right-image-left"
+                  />
+                  <div class="layout-preview">
+                    <div class="about-demo">
+                      <div class="about-image">IMAGE</div>
+                      <div class="about-text">TEXT</div>
+                    </div>
+                    <strong>Text Right, Image Left</strong>
+                  </div>
+                </label>
+                <label class="layout-example">
+                  <input
+                    type="radio"
+                    name="aboutLayout"
+                    value="centered-text"
+                  />
+                  <div class="layout-preview">
+                    <div class="about-demo centered">
+                      <div class="about-text full-width">CENTERED TEXT</div>
+                    </div>
+                    <strong>Centered Text Block</strong>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="aboutImage">About Section Image</label>
+              <div class="image-upload-area">
+                <input
+                  type="file"
+                  id="aboutImage"
+                  name="aboutImage"
+                  accept="image/*"
+                />
+                <div class="upload-placeholder">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <p>Click to upload your about image</p>
+                  <small>Or describe what image you want us to find</small>
+                </div>
+              </div>
+              <input
+                type="text"
+                placeholder="e.g., Professional team photo, business exterior, owner portrait"
+                class="image-description"
+              />
+            </div>
+          </div>
+
+          <div class="subsection">
+            <h3>Services/Products Section</h3>
+            <div class="form-group">
+              <label for="servicesHeadline">Services Section Headline</label>
+              <input
+                type="text"
+                id="servicesHeadline"
+                name="servicesHeadline"
+                placeholder="e.g., Our Services, What We Offer, Our Products"
+              />
+            </div>
+
+                        <div class="services-list">
+    <div class="services-header">
+    <h4><i class="fas fa-cogs"></i> Service/Product Items</h4>
+    <p class="services-subtitle">Add your services or products with details and pricing (all optional)</p>
+    <div id="autoPopulateSection" class="auto-populate-section" style="display: none;">
+        <button type="button" id="autoPopulateServices" class="auto-populate-btn">
+            <i class="fas fa-magic"></i>
+            <span>Auto-Fill Common Services</span>
+        </button>
+        <small class="auto-populate-help">Click to automatically add common services for your industry</small>
+    </div>
+</div>
+
+    <!-- Service 1 -->
+    <div class="service-card">
+        <div class="service-header">
+    <div class="service-number">
+        <i class="fas fa-star"></i>
+        <span>Service 1</span>
+    </div>
+    <div class="service-optional">Optional</div>
+</div>
+        
+        <div class="service-content">
+            <div class="service-basic-info">
+                <div class="input-group">
+                    <label for="service1Name">Service Name</label>
+<input type="text" id="service1Name" name="service1Name" 
+       placeholder="e.g., Premium Wash & Wax">
+                </div>
+                <div class="input-group price-input">
+                    <label for="service1Price">Price</label>
+                    <input type="text" id="service1Price" name="service1Price" 
+                           placeholder="e.g., $49.99">
+                </div>
+            </div>
+            
+            <div class="service-description">
+                <label for="service1Description">Service Description</label>
+                <textarea id="service1Description" name="service1Description" 
+                          placeholder="Describe what this service includes and what makes it special..." 
+                          rows="3"></textarea>
+            </div>
+            
+            <div class="service-image-section">
+                <div class="image-upload-wrapper">
+                    <label>Service Image</label>
+                    <div class="image-upload-area compact">
+                        <input type="file" id="service1Image" name="service1Image" accept="image/*">
+                        <div class="upload-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Upload Image</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-description-wrapper">
+                    <label>Or describe the image you want</label>
+                    <input type="text" id="service1ImageDesc" name="service1ImageDesc" 
+                           placeholder="e.g., Before/after photos, team working" 
+                           class="image-description-input">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service 2 -->
+    <div class="service-card">
+        <div class="service-header">
+            <div class="service-number">
+                <i class="fas fa-star"></i>
+                <span>Service 2</span>
+            </div>
+            <div class="service-optional">Optional</div>
+        </div>
+        
+        <div class="service-content">
+            <div class="service-basic-info">
+                <div class="input-group">
+                    <label for="service2Name">Service Name</label>
+                    <input type="text" id="service2Name" name="service2Name" 
+                           placeholder="e.g., Interior Detailing">
+                </div>
+                <div class="input-group price-input">
+                    <label for="service2Price">Price</label>
+                    <input type="text" id="service2Price" name="service2Price" 
+                           placeholder="e.g., $79.99">
+                </div>
+            </div>
+            
+            <div class="service-description">
+                <label for="service2Description">Service Description</label>
+                <textarea id="service2Description" name="service2Description" 
+                          placeholder="Describe what this service includes and what makes it special..." 
+                          rows="3"></textarea>
+            </div>
+            
+            <div class="service-image-section">
+                <div class="image-upload-wrapper">
+                    <label>Service Image</label>
+                    <div class="image-upload-area compact">
+                        <input type="file" id="service2Image" name="service2Image" accept="image/*">
+                        <div class="upload-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Upload Image</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-description-wrapper">
+                    <label>Or describe the image you want</label>
+                    <input type="text" id="service2ImageDesc" name="service2ImageDesc" 
+                           placeholder="e.g., Before/after photos, team working" 
+                           class="image-description-input">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service 3 -->
+    <div class="service-card">
+        <div class="service-header">
+            <div class="service-number">
+                <i class="fas fa-star"></i>
+                <span>Service 3</span>
+            </div>
+            <div class="service-optional">Optional</div>
+        </div>
+        
+        <div class="service-content">
+            <div class="service-basic-info">
+                <div class="input-group">
+                    <label for="service3Name">Service Name</label>
+                    <input type="text" id="service3Name" name="service3Name" 
+                           placeholder="e.g., Paint Protection">
+                </div>
+                <div class="input-group price-input">
+                    <label for="service3Price">Price</label>
+                    <input type="text" id="service3Price" name="service3Price" 
+                           placeholder="e.g., $199.99">
+                </div>
+            </div>
+            
+            <div class="service-description">
+                <label for="service3Description">Service Description</label>
+                <textarea id="service3Description" name="service3Description" 
+                          placeholder="Describe what this service includes and what makes it special..." 
+                          rows="3"></textarea>
+            </div>
+            
+            <div class="service-image-section">
+                <div class="image-upload-wrapper">
+                    <label>Service Image</label>
+                    <div class="image-upload-area compact">
+                        <input type="file" id="service3Image" name="service3Image" accept="image/*">
+                        <div class="upload-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Upload Image</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-description-wrapper">
+                    <label>Or describe the image you want</label>
+                    <input type="text" id="service3ImageDesc" name="service3ImageDesc" 
+                           placeholder="e.g., Before/after photos, team working" 
+                           class="image-description-input">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="add-service-btn">
+        <i class="fas fa-plus"></i>
+        <span>Add Another Service</span>
+    </button>
+</div>
+
+            <div class="form-group">
+              <label>Services Layout Style *</label>
+              <div class="layout-examples">
+                <label class="layout-example">
+                  <input
+                    type="radio"
+                    name="servicesLayout"
+                    value="cards-grid"
+                  />
+                  <div class="layout-preview">
+                    <div class="services-demo grid">
+                      <div class="service-card">Service 1</div>
+                      <div class="service-card">Service 2</div>
+                      <div class="service-card">Service 3</div>
+                    </div>
+                    <strong>Cards in Grid</strong>
+                  </div>
+                </label>
+                <label class="layout-example">
+                  <input
+                    type="radio"
+                    name="servicesLayout"
+                    value="list-with-icons"
+                  />
+                  <div class="layout-preview">
+                    <div class="services-demo list">
+                      <div class="service-item">• Service 1</div>
+                      <div class="service-item">• Service 2</div>
+                      <div class="service-item">• Service 3</div>
+                    </div>
+                    <strong>List with Icons</strong>
+                  </div>
+                </label>
+                <label class="layout-example">
+                  <input type="radio" name="servicesLayout" value="accordion" />
+                  <div class="layout-preview">
+                    <div class="services-demo accordion">
+                      <div class="service-item">▼ Service 1</div>
+                      <div class="service-item">▶ Service 2</div>
+                      <div class="service-item">▶ Service 3</div>
+                    </div>
+                    <strong>Expandable Accordion</strong>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <h3>Testimonials Section</h3>
+            <div class="form-group">
+              <label for="testimonialsHeadline"
+                >Testimonials Section Headline</label
+              >
+              <input
+                type="text"
+                id="testimonialsHeadline"
+                name="testimonialsHeadline"
+                placeholder="e.g., What Our Customers Say, Client Reviews, Testimonials"
+              />
+            </div>
+
+            <div class="testimonials-list">
+              <div class="testimonial-item">
+                <h5>Testimonial 1</h5>
+                <div class="form-group">
+                  <label for="testimonial1Quote">Customer Quote *</label>
+                  <textarea
+                    id="testimonial1Quote"
+                    name="testimonial1Quote"
+                    placeholder="What did the customer say about your service?"
+                  ></textarea>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="testimonial1Name">Customer Name</label>
+                    <input
+                      type="text"
+                      id="testimonial1Name"
+                      name="testimonial1Name"
+                      placeholder="e.g., John Smith"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="testimonial1Title"
+                      >Customer Title/Company</label
+                    >
+                    <input
+                      type="text"
+                      id="testimonial1Title"
+                      name="testimonial1Title"
+                      placeholder="e.g., Business Owner, ABC Company"
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="testimonial1Photo">Customer Photo</label>
+                  <input
+                    type="file"
+                    id="testimonial1Photo"
+                    name="testimonial1Photo"
+                    accept="image/*"
+                  />
+                  <small class="help-text"
+                    >Optional - leave blank for placeholder</small
+                  >
+                </div>
+              </div>
+
+              <div class="testimonial-item">
+                <h5>Testimonial 2</h5>
+                <div class="form-group">
+                  <label for="testimonial2Quote">Customer Quote</label>
+                  <textarea
+                    id="testimonial2Quote"
+                    name="testimonial2Quote"
+                    placeholder="What did the customer say about your service?"
+                  ></textarea>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="testimonial2Name">Customer Name</label>
+                    <input
+                      type="text"
+                      id="testimonial2Name"
+                      name="testimonial2Name"
+                      placeholder="e.g., Sarah Johnson"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="testimonial2Title"
+                      >Customer Title/Company</label
+                    >
+                    <input
+                      type="text"
+                      id="testimonial2Title"
+                      name="testimonial2Title"
+                      placeholder="e.g., Marketing Manager"
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="testimonial2Photo">Customer Photo</label>
+                  <input
+                    type="file"
+                    id="testimonial2Photo"
+                    name="testimonial2Photo"
+                    accept="image/*"
+                  />
+                  <small class="help-text"
+                    >Optional - leave blank for placeholder</small
+                  >
+                </div>
+              </div>
+
+              <div class="testimonial-item">
+                <h5>Testimonial 3</h5>
+                <div class="form-group">
+                  <label for="testimonial3Quote">Customer Quote</label>
+                  <textarea
+                    id="testimonial3Quote"
+                    name="testimonial3Quote"
+                    placeholder="What did the customer say about your service?"
+                  ></textarea>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="testimonial3Name">Customer Name</label>
+                    <input
+                      type="text"
+                      id="testimonial3Name"
+                      name="testimonial3Name"
+                      placeholder="e.g., Mike Davis"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="testimonial3Title"
+                      >Customer Title/Company</label
+                    >
+                    <input
+                      type="text"
+                      id="testimonial3Title"
+                      name="testimonial3Title"
+                      placeholder="e.g., Small Business Owner"
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="testimonial3Photo">Customer Photo</label>
+                  <input
+                    type="file"
+                    id="testimonial3Photo"
+                    name="testimonial3Photo"
+                    accept="image/*"
+                  />
+                  <small class="help-text"
+                    >Optional - leave blank for placeholder</small
+                  >
+                </div>
+              </div>
+
+              <button type="button" class="add-testimonial-btn">
+                <i class="fas fa-plus"></i> Add Another Testimonial
+              </button>
+            </div>
+
+            <div class="form-group">
+              <label>Testimonials Display Style *</label>
+              <div class="layout-examples">
+                <label class="layout-example">
+                  <input
+                    type="radio"
+                    name="testimonialsLayout"
+                    value="carousel"
+                  />
+                  <div class="layout-preview">
+                    <div class="testimonials-demo carousel">
+                      <div class="testimonial-slide active">
+                        "Great service!" - John
+                      </div>
+                      <div class="carousel-dots">• ○ ○</div>
+                    </div>
+                    <strong>Carousel/Slider</strong>
+                  </div>
+                </label>
+                <label class="layout-example">
+                  <input type="radio" name="testimonialsLayout" value="grid" />
+                  <div class="layout-preview">
+                    <div class="testimonials-demo grid">
+                      <div class="testimonial-card">Review 1</div>
+                      <div class="testimonial-card">Review 2</div>
+                      <div class="testimonial-card">Review 3</div>
+                    </div>
+                    <strong>Grid Layout</strong>
+                  </div>
+                </label>
+                <label class="layout-example">
+                  <input
+                    type="radio"
+                    name="testimonialsLayout"
+                    value="single-rotating"
+                  />
+                  <div class="layout-preview">
+                    <div class="testimonials-demo single">
+                      <div class="testimonial-single">
+                        "Excellent work!" - Sarah
+                      </div>
+                    </div>
+                    <strong>Single with Rotation</strong>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 8: Media & Assets -->
+        <section class="form-section" data-section="8">
+          <div class="section-header">
+            <h2><i class="fas fa-images"></i> 8. Media & Assets</h2>
+            <p class="section-description">
+              Upload your images and specify your visual preferences.
+            </p>
+          </div>
+
+          <div class="subsection">
+            <h3>Logo & Branding</h3>
+            <div class="form-group">
+              <label for="logoUpload">Business Logo</label>
+              <div class="image-upload-area">
+                <input
+                  type="file"
+                  id="logoUpload"
+                  name="logoUpload"
+                  accept="image/*"
+                />
+                <div class="upload-placeholder">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <p>Upload your logo</p>
+                  <small>PNG or JPG, transparent background preferred</small>
+                </div>
+              </div>
+              <div class="logo-options">
+                <label class="checkbox-item">
+                  <input type="checkbox" name="logoOptions" value="text-logo" />
+                  <span class="checkmark"></span>
+                  <div class="option-content">
+                    <strong>Create Text-Based Logo</strong>
+                    <small>Use business name as styled text logo</small>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <h3>Hero Section Background</h3>
+            <div class="form-group">
+              <label>Hero Background Type *</label>
+              <div class="checkbox-grid">
+                <label class="checkbox-item">
+                  <input
+                    type="radio"
+                    name="heroBackgroundType"
+                    value="image"
+                    required
+                  />
+                  <span class="checkmark"></span>
+                  <div class="option-content">
+                    <strong>Background Image</strong>
+                    <small>Upload or describe desired image</small>
+                  </div>
+                </label>
+                <label class="checkbox-item">
+                  <input
+                    type="radio"
+                    name="heroBackgroundType"
+                    value="video"
+                    required
+                  />
+                  <span class="checkmark"></span>
+                  <div class="option-content">
+                    <strong>Video Background</strong>
+                    <small>Upload or provide video link</small>
+                  </div>
+                </label>
+                <label class="checkbox-item">
+                  <input
+                    type="radio"
+                    name="heroBackgroundType"
+                    value="gradient"
+                    required
+                  />
+                  <span class="checkmark"></span>
+                  <div class="option-content">
+                    <strong>Gradient Background</strong>
+                    <small>Solid colors or gradients</small>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group" id="heroImageUpload">
+              <label for="heroImage">Hero Background Image</label>
+              <div class="image-upload-area">
+                <input
+                  type="file"
+                  id="heroImage"
+                  name="heroImage"
+                  accept="image/*"
+                />
+                <div class="upload-placeholder">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <p>Upload hero background image</p>
+                  <small
+                    >High resolution recommended (1920x1080 or larger)</small
+                  >
+                </div>
+              </div>
+              <input
+                type="text"
+                placeholder="Or describe the image you want (e.g., clean car in garage, team working, modern office)"
+                class="image-description"
+              />
+            </div>
+
+            <div class="form-group" id="heroVideoUpload" style="display: none">
+              <label for="heroVideo">Hero Background Video</label>
+              <input
+                type="file"
+                id="heroVideo"
+                name="heroVideo"
+                accept="video/*"
+              />
+              <input
+                type="url"
+                placeholder="Or paste YouTube/Vimeo link"
+                class="video-link"
+              />
+              <small class="help-text"
+                >Video should be short (10-30 seconds) and loop-friendly</small
+              >
+            </div>
+          </div>
+
+          <div class="subsection">
+            <h3>Gallery Images</h3>
+            <div class="form-group">
+              <label for="galleryImages">Portfolio/Gallery Images</label>
+              <div class="image-upload-area multiple">
+                <input
+                  type="file"
+                  id="galleryImages"
+                  name="galleryImages"
+                  accept="image/*"
+                  multiple
+                />
+                <div class="upload-placeholder">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <p>Upload multiple gallery images</p>
+                  <small>Hold Ctrl/Cmd to select multiple files</small>
+                </div>
+              </div>
+              <textarea
+                placeholder="Or describe the types of images you want in your gallery (e.g., before/after photos, completed projects, team at work)"
+                class="image-description"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <h3>Image Style Preferences</h3>
+            <div class="form-group">
+              <label>Preferred Image Style *</label>
+              <small class="help-text"
+                >What style of images do you prefer?</small
+              >
+              <div class="image-style-examples">
+                <label class="style-example">
+                  <input
+                    type="radio"
+                    name="imageStyle"
+                    value="professional-photography"
+                    required
+                  />
+                  <div class="style-preview">
+                    <div class="style-demo professional"></div>
+                    <strong>Professional Photography</strong>
+                    <small>High-quality, polished photos</small>
+                  </div>
+                </label>
+                <label class="style-example">
+                  <input
+                    type="radio"
+                    name="imageStyle"
+                    value="lifestyle-candid"
+                    required
+                  />
+                  <div class="style-preview">
+                    <div class="style-demo lifestyle"></div>
+                    <strong>Lifestyle/Candid</strong>
+                    <small>Natural, authentic moments</small>
+                  </div>
+                </label>
+                <label class="style-example">
+                  <input
+                    type="radio"
+                    name="imageStyle"
+                    value="minimalist-clean"
+                    required
+                  />
+                  <div class="style-preview">
+                    <div class="style-demo minimalist"></div>
+                    <strong>Minimalist/Clean</strong>
+                    <small>Simple, uncluttered compositions</small>
+                  </div>
+                </label>
+                <label class="style-example">
+                  <input
+                    type="radio"
+                    name="imageStyle"
+                    value="illustrations-graphics"
+                    required
+                  />
+                  <div class="style-preview">
+                    <div class="style-demo illustrations"></div>
+                    <strong>Illustrations/Graphics</strong>
+                    <small>Custom graphics and illustrations</small>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <h3>Icons</h3>
+            <div class="form-group">
+              <label>Icon Style *</label>
+              <small class="help-text"
+                >What style of icons do you prefer?</small
+              >
+              <div class="icon-style-examples">
+                <label class="icon-example">
+                  <input
+                    type="radio"
+                    name="iconStyle"
+                    value="font-awesome"
+                    required
+                  />
+                  <div class="icon-preview">
+                    <div class="icon-demo">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-heart"></i>
+                      <i class="fas fa-cog"></i>
+                    </div>
+                    <strong>Font Awesome Icons</strong>
+                    <small>Free icon library - versatile</small>
+                  </div>
+                </label>
+                <label class="icon-example">
+                  <input
+                    type="radio"
+                    name="iconStyle"
+                    value="line-icons"
+                    required
+                  />
+                  <div class="icon-preview">
+                    <div class="icon-demo line">
+                      <i class="far fa-star"></i>
+                      <i class="far fa-heart"></i>
+                      <i class="far fa-cog"></i>
+                    </div>
+                    <strong>Simple Line Icons</strong>
+                    <small>Clean, minimal outlines</small>
+                  </div>
+                </label>
+                <label class="icon-example">
+                  <input
+                    type="radio"
+                    name="iconStyle"
+                    value="solid-icons"
+                    required
+                  />
+                  <div class="icon-preview">
+                    <div class="icon-demo solid">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-heart"></i>
+                      <i class="fas fa-cog"></i>
+                    </div>
+                    <strong>Solid Filled Icons</strong>
+                    <small>Bold, filled shapes</small>
+                  </div>
+                </label>
+                <label class="icon-example">
+                  <input
+                    type="radio"
+                    name="iconStyle"
+                    value="custom-icons"
+                    required
+                  />
+                  <div class="icon-preview">
+                    <div class="icon-demo custom">
+                      <span>🎨</span>
+                      <span>✨</span>
+                      <span>🚀</span>
+                    </div>
+                    <strong>Custom Icons</strong>
+                    <small>You'll provide custom icons</small>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div
+              class="form-group"
+              id="customIconsUpload"
+              style="display: none"
+            >
+              <label for="customIcons">Upload Custom Icons</label>
+              <input
+                type="file"
+                id="customIcons"
+                name="customIcons"
+                accept="image/*"
+                multiple
+              />
+              <small class="help-text">Upload SVG or PNG icons</small>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 9: Technical Specifications -->
+        <section class="form-section" data-section="9">
+          <div class="section-header">
+            <h2><i class="fas fa-server"></i> 9. Technical Specifications</h2>
+            <p class="section-description">
+              Technical requirements and integrations for your website.
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label>Performance Requirements *</label>
+            <small class="help-text"
+              >What technical features are important to you?</small
+            >
+            <div class="checkbox-grid">
+              <label class="checkbox-item">
+                <input
+                  type="checkbox"
+                  name="performanceRequirements"
+                  value="fast-loading"
+                  checked
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Fast Loading</strong>
+                  <small>Optimized images and code for speed</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input
+                  type="checkbox"
+                  name="performanceRequirements"
+                  value="seo-optimized"
+                  checked
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>SEO Optimized</strong>
+                  <small>Search engine friendly structure</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input
+                  type="checkbox"
+                  name="performanceRequirements"
+                  value="accessibility-compliant"
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Accessibility Compliant</strong>
+                  <small>Usable by people with disabilities</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input
+                  type="checkbox"
+                  name="performanceRequirements"
+                  value="cross-browser-compatible"
+                  checked
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Cross-Browser Compatible</strong>
+                  <small>Works on all major browsers</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input
+                  type="checkbox"
+                  name="performanceRequirements"
+                  value="mobile-first"
+                  checked
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Mobile-First Design</strong>
+                  <small>Designed for mobile, then desktop</small>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Integrations Needed</label>
+            <small class="help-text"
+              >Select any third-party services you want to integrate</small
+            >
+            <div class="checkbox-grid">
+              <label class="checkbox-item">
+                <input
+                  type="checkbox"
+                  name="integrations"
+                  value="google-analytics"
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Google Analytics</strong>
+                  <small>Track website visitors and behavior</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input
+                  type="checkbox"
+                  name="integrations"
+                  value="google-search-console"
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Google Search Console</strong>
+                  <small>Monitor search performance</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input
+                  type="checkbox"
+                  name="integrations"
+                  value="facebook-pixel"
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Facebook Pixel</strong>
+                  <small>Track Facebook ad performance</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input
+                  type="checkbox"
+                  name="integrations"
+                  value="email-marketing"
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Email Marketing Service</strong>
+                  <small>MailChimp, Constant Contact, etc.</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input
+                  type="checkbox"
+                  name="integrations"
+                  value="crm-integration"
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>CRM Integration</strong>
+                  <small>Customer relationship management</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input
+                  type="checkbox"
+                  name="integrations"
+                  value="payment-processing"
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Payment Processing</strong>
+                  <small>Stripe, PayPal, Square</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input
+                  type="checkbox"
+                  name="integrations"
+                  value="booking-system"
+                />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Booking System</strong>
+                  <small>Online appointment scheduling</small>
+                </div>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="integrations" value="live-chat" />
+                <span class="checkmark"></span>
+                <div class="option-content">
+                  <strong>Live Chat</strong>
+                  <small>Real-time customer support</small>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="integration-details">
+            <div class="form-group">
+              <label for="emailMarketingService"
+                >Email Marketing Service (if selected)</label
+              >
+              <select id="emailMarketingService" name="emailMarketingService">
+                <option value="">Select service</option>
+                <option value="mailchimp">MailChimp</option>
+                <option value="constant-contact">Constant Contact</option>
+                <option value="convertkit">ConvertKit</option>
+                <option value="aweber">AWeber</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="crmService">CRM Service (if selected)</label>
+              <input
+                type="text"
+                id="crmService"
+                name="crmService"
+                placeholder="e.g., Salesforce, HubSpot, Pipedrive"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="paymentService">Payment Service (if selected)</label>
+              <select id="paymentService" name="paymentService">
+                <option value="">Select service</option>
+                <option value="stripe">Stripe</option>
+                <option value="paypal">PayPal</option>
+                <option value="square">Square</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="bookingService">Booking Service (if selected)</label>
+              <input
+                type="text"
+                id="bookingService"
+                name="bookingService"
+                placeholder="e.g., Calendly, Acuity, BookingBug"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="liveChatService"
+                >Live Chat Service (if selected)</label
+              >
+              <select id="liveChatService" name="liveChatService">
+                <option value="">Select service</option>
+                <option value="intercom">Intercom</option>
+                <option value="zendesk">Zendesk Chat</option>
+                <option value="drift">Drift</option>
+                <option value="tawk">Tawk.to</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 10: Final Review & Export -->
+        <section class="form-section" data-section="10">
+          <div class="section-header">
+            <h2>
+              <i class="fas fa-check-circle"></i> 10. Final Review & Additional
+              Info
+            </h2>
+            <p class="section-description">
+              Review your choices and provide any additional information.
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label>Call-to-Action Strategy *</label>
+            <small class="help-text"
+              >What are the main actions you want visitors to take? (In order of
+              priority)</small
+            >
+            <div class="cta-priority">
+              <div class="form-group">
+                <label for="primaryCTA">Primary Action (Most Important)</label>
+                <select id="primaryCTA" name="primaryCTA" required>
+                  <option value="">Select primary action</option>
+                  <option value="contact-us">Contact Us</option>
+                  <option value="get-quote">Get Quote/Estimate</option>
+                  <option value="call-now">Call Now</option>
+                  <option value="book-appointment">Book Appointment</option>
+                  <option value="learn-more">Learn More</option>
+                  <option value="view-portfolio">View Portfolio</option>
+                  <option value="sign-up">Sign Up</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="secondaryCTA">Secondary Action</label>
+                <select id="secondaryCTA" name="secondaryCTA">
+                  <option value="">Select secondary action</option>
+                  <option value="contact-us">Contact Us</option>
+                  <option value="get-quote">Get Quote/Estimate</option>
+                  <option value="call-now">Call Now</option>
+                  <option value="book-appointment">Book Appointment</option>
+                  <option value="learn-more">Learn More</option>
+                  <option value="view-portfolio">View Portfolio</option>
+                  <option value="sign-up">Sign Up</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="tertiaryCTA">Tertiary Action</label>
+                <select id="tertiaryCTA" name="tertiaryCTA">
+                  <option value="">Select tertiary action</option>
+                  <option value="contact-us">Contact Us</option>
+                  <option value="get-quote">Get Quote/Estimate</option>
+                  <option value="call-now">Call Now</option>
+                  <option value="book-appointment">Book Appointment</option>
+                  <option value="learn-more">Learn More</option>
+                  <option value="view-portfolio">View Portfolio</option>
+                  <option value="sign-up">Sign Up</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inspirationWebsites">Inspiration Websites</label>
+            <textarea
+              id="inspirationWebsites"
+              name="inspirationWebsites"
+              placeholder="List any websites you like the look/feel of (one per line)"
+            ></textarea>
+            <small class="help-text"
+              >Include URLs of websites whose design you admire</small
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="specialRequirements"
+              >Special Requirements or Unique Features</label
+            >
+            <textarea
+              id="specialRequirements"
+              name="specialRequirements"
+              placeholder="Describe any unique features or special requirements not covered above"
+            ></textarea>
+            <small class="help-text"
+              >Anything special or unique you want on your website</small
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="additionalNotes">Additional Notes</label>
+            <textarea
+              id="additionalNotes"
+              name="additionalNotes"
+              placeholder="Any other information that would help us create your perfect website"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="timeline">Preferred Timeline</label>
+            <select id="timeline" name="timeline">
+              <option value="">Select timeline</option>
+              <option value="asap">ASAP (Rush job)</option>
+              <option value="1-week">Within 1 week</option>
+              <option value="2-weeks">Within 2 weeks</option>
+              <option value="1-month">Within 1 month</option>
+              <option value="flexible">Flexible timeline</option>
+            </select>
+            <small class="help-text"
+              >When do you need your website completed?</small
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="budget">Budget Range (Optional)</label>
+            <select id="budget" name="budget">
+              <option value="">Select budget range</option>
+              <option value="under-500">Under $500</option>
+              <option value="500-1000">$500 - $1,000</option>
+              <option value="1000-2500">$1,000 - $2,500</option>
+              <option value="2500-5000">$2,500 - $5,000</option>
+              <option value="5000-plus">$5,000+</option>
+              <option value="discuss">Prefer to discuss</option>
+            </select>
+            <small class="help-text"
+              >This helps us recommend appropriate features</small
+            >
+          </div>
+
+          <div class="template-summary">
+            <h3>Template Summary</h3>
+            <p>
+              Once you submit this form, we'll generate a comprehensive website
+              template based on your specifications. You'll receive:
+            </p>
+            <ul>
+              <li>Complete website code (HTML, CSS, JavaScript)</li>
+              <li>All specified features and functionality</li>
+              <li>Mobile-responsive design</li>
+              <li>Professional styling matching your preferences</li>
+              <li>Setup instructions and customization guide</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Navigation Buttons -->
+        <div class="form-navigation">
+          <button type="button" id="prevBtn" class="nav-btn prev-btn" disabled>
+            <i class="fas fa-arrow-left"></i> Previous
+          </button>
+          <button type="button" id="nextBtn" class="nav-btn next-btn">
+            Next <i class="fas fa-arrow-right"></i>
+          </button>
+          <button
+  type="submit"
+  id="submitBtn"
+  class="nav-btn submit-btn"
+  style="display: none"
+>
+  <i class="fas fa-download"></i> Download Website Package
+</button>
+        </div>
+      </form>
+
+      <!-- Progress Indicator -->
+      <div class="section-indicator">
+        <div class="indicator-item active" data-section="1">1</div>
+        <div class="indicator-item" data-section="2">2</div>
+        <div class="indicator-item" data-section="3">3</div>
+        <div class="indicator-item" data-section="4">4</div>
+        <div class="indicator-item" data-section="5">5</div>
+        <div class="indicator-item" data-section="6">6</div>
+        <div class="indicator-item" data-section="7">7</div>
+        <div class="indicator-item" data-section="8">8</div>
+        <div class="indicator-item" data-section="9">9</div>
+        <div class="indicator-item" data-section="10">10</div>
+      </div>
+    </main>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
