@@ -21,6 +21,8 @@ class TemplateBuilder {
     this.setupStyleAndIconSelections();
     this.setupThemeToggle();
     this.loadSavedData();
+    this.setupServiceAreaMapping();
+    this.setupProjectButtons();
 }
 
     setupEventListeners() {
@@ -45,6 +47,7 @@ class TemplateBuilder {
         if (section > this.currentSection) {
             this.showNotification(`Jumped to section ${section}. You can return to complete previous sections anytime.`, 'info');
         }
+ 
     });
 });
 
@@ -79,6 +82,12 @@ if (industrySelect) {
     const addTestimonialBtn = document.querySelector('.add-testimonial-btn');
     if (addTestimonialBtn) {
         addTestimonialBtn.addEventListener('click', () => this.addTestimonialItem());
+    }
+
+    // Add project button
+    const addProjectBtn = document.querySelector('.add-project-btn');
+    if (addProjectBtn) {
+        addProjectBtn.addEventListener('click', () => this.addProjectItem());
     }
 
     // Auto-populate services button
@@ -151,6 +160,106 @@ setupDynamicFields() {
     // Setup dynamic form behavior
     this.setupDynamicButtons();
     this.setupConditionalFields();
+
+    // Setup project button with delay to ensure DOM is ready
+setTimeout(() => {
+    const addProjectBtn = document.querySelector('.add-project-btn');
+    console.log('Looking for add project button:', addProjectBtn);
+    
+    if (addProjectBtn) {
+        addProjectBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log('Project button clicked!');
+            this.addProjectItem();
+        });
+        console.log('Project button listener added successfully');
+    } else {
+        console.log('Project button not found - checking again in 1 second');
+        setTimeout(() => {
+            const btn = document.querySelector('.add-project-btn');
+            if (btn) {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    this.addProjectItem();
+                });
+                console.log('Project button found and listener added on retry');
+            }
+        }, 1000);
+    }
+}, 100);
+}
+
+// Add this new method after setupDynamicFields
+setupServiceAreaMapping() {
+    const cityInput = document.getElementById('cityInput');
+    const addCityBtn = document.getElementById('addCity');
+    const selectedAreas = document.getElementById('selectedAreas');
+    const serviceAreasInput = document.getElementById('serviceAreas');
+
+    if (!cityInput || !addCityBtn || !selectedAreas || !serviceAreasInput) {
+        console.log('Service area mapping elements not found');
+        return;
+    }
+
+    function addArea(area) {
+        const areaTag = document.createElement('div');
+        areaTag.classList.add('area-tag');
+        areaTag.textContent = area;
+        areaTag.onclick = () => removeArea(area);
+        selectedAreas.appendChild(areaTag);
+        updateServiceAreasInput();
+    }
+
+    function removeArea(area) {
+        const areaTag = Array.from(selectedAreas.children).find(tag => tag.textContent === area);
+        if (areaTag) {
+            areaTag.remove();
+            updateServiceAreasInput();
+        }
+    }
+
+    function updateServiceAreasInput() {
+        const areas = Array.from(selectedAreas.children).map(tag => tag.textContent);
+        serviceAreasInput.value = areas.join(', ');
+    }
+
+    addCityBtn.addEventListener('click', () => {
+        const area = cityInput.value.trim();
+        if (area) {
+            addArea(area);
+            cityInput.value = '';
+        }
+    });
+
+    cityInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            addCityBtn.click();
+        }
+    });
+}
+
+setupProjectButtons() {
+    // Setup add project button
+    const addProjectBtn = document.querySelector('.add-project-btn');
+    console.log('Add project button found:', addProjectBtn); // Debug log
+    
+    if (addProjectBtn) {
+        // Remove any existing listeners first
+        addProjectBtn.removeEventListener('click', this.addProjectHandler);
+        
+        // Create bound handler
+        this.addProjectHandler = () => {
+            console.log('Add project button clicked!'); // Debug log
+            this.addProjectItem();
+        };
+        
+        // Add the listener
+        addProjectBtn.addEventListener('click', this.addProjectHandler);
+        console.log('Add project button listener added'); // Debug log
+    } else {
+        console.log('Add project button not found!'); // Debug log
+    }
 }
 
 setupDynamicButtons() {
@@ -1270,6 +1379,109 @@ setupStyleAndIconSelections() {
         this.showNotification('New testimonial added!', 'success');
     }
 
+    addProjectItem() {
+    const projectsList = document.querySelector('.before-after-projects');
+    const projectCount = projectsList.querySelectorAll('.project-card').length;
+    const newProjectNumber = projectCount + 1;
+
+    const projectHTML = `
+        <div class="project-card">
+            <div class="project-header">
+                <div class="project-number">
+                    <i class="fas fa-hammer"></i>
+                    <span>Project ${newProjectNumber}</span>
+                </div>
+                <div class="project-optional">Optional</div>
+            </div>
+            
+            <div class="project-content">
+                <div class="project-basic-info">
+                    <div class="input-group">
+                        <label for="project${newProjectNumber}Name">Project Name</label>
+                        <input type="text" id="project${newProjectNumber}Name" name="project${newProjectNumber}Name" 
+                               placeholder="e.g., Kitchen Renovation, Bathroom Remodel">
+                    </div>
+                    <div class="input-group">
+                        <label for="project${newProjectNumber}Category">Project Category</label>
+                        <select id="project${newProjectNumber}Category" name="project${newProjectNumber}Category">
+                            <option value="">Select category</option>
+                            <option value="kitchen">Kitchen</option>
+                            <option value="bathroom">Bathroom</option>
+                            <option value="exterior">Exterior</option>
+                            <option value="landscaping">Landscaping</option>
+                            <option value="electrical">Electrical Work</option>
+                            <option value="plumbing">Plumbing</option>
+                            <option value="hvac">HVAC</option>
+                            <option value="painting">Painting</option>
+                            <option value="roofing">Roofing</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="project-description">
+                    <label for="project${newProjectNumber}Description">Project Description</label>
+                    <textarea id="project${newProjectNumber}Description" name="project${newProjectNumber}Description" 
+                              placeholder="Describe what was done in this project..." 
+                              rows="3"></textarea>
+                </div>
+                
+                <div class="before-after-images">
+                    <div class="image-pair">
+                        <div class="before-image">
+                            <label>Before Image</label>
+                            <div class="image-upload-area compact">
+                                <input type="file" id="project${newProjectNumber}Before" name="project${newProjectNumber}Before" accept="image/*">
+                                <div class="upload-placeholder">
+                                    <i class="fas fa-image"></i>
+                                    <span>Before</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="after-image">
+                            <label>After Image</label>
+                            <div class="image-upload-area compact">
+                                <input type="file" id="project${newProjectNumber}After" name="project${newProjectNumber}After" accept="image/*">
+                                <div class="upload-placeholder">
+                                    <i class="fas fa-image"></i>
+                                    <span>After</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-actions">
+                    <button type="button" class="remove-project-btn" onclick="this.closest('.project-card').remove()">
+                        <i class="fas fa-trash"></i> Remove Project
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+
+    const addButton = projectsList.querySelector('.add-project-btn');
+    addButton.insertAdjacentHTML('beforebegin', projectHTML);
+
+    // Setup event listeners for new fields
+    const newProjectCard = projectsList.querySelector('.project-card:nth-last-child(2)');
+    newProjectCard.querySelectorAll('input, textarea, select').forEach(input => {
+        input.addEventListener('change', () => this.saveFormData());
+        input.addEventListener('input', () => this.saveFormData());
+    });
+
+    // Setup file inputs for new project
+    const beforeFileInput = newProjectCard.querySelector(`input[name="project${newProjectNumber}Before"]`);
+    const afterFileInput = newProjectCard.querySelector(`input[name="project${newProjectNumber}After"]`);
+    this.setupSingleFileInput(beforeFileInput);
+    this.setupSingleFileInput(afterFileInput);
+
+    this.showNotification('New project added!', 'success');
+    
+    // Scroll to new project
+    newProjectCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
     toggleHeroBackgroundFields() {
         const selectedType = document.querySelector('input[name="heroBackgroundType"]:checked')?.value;
         const imageUpload = document.getElementById('heroImageUpload');
@@ -2326,3 +2538,128 @@ const notificationStyles = `
 `;
 
 document.head.insertAdjacentHTML('beforeend', notificationStyles);
+
+// Global function for adding projects
+function addNewProject() {
+    console.log('addNewProject called!');
+    
+    // Try multiple selectors to find the projects container
+let projectsList = document.querySelector('.before-after-projects');
+if (!projectsList) {
+    projectsList = document.querySelector('#beforeAfterProjects');
+}
+if (!projectsList) {
+    projectsList = document.querySelector('.before-after-gallery');
+}
+
+console.log('Projects container found:', projectsList);
+
+if (!projectsList) {
+    console.error('Could not find projects container!');
+    alert('Error: Could not find projects container');
+    return;
+}
+
+const projectCount = projectsList.querySelectorAll('.project-card').length;
+const newProjectNumber = projectCount + 1;
+
+    const projectHTML = `
+        <div class="project-card">
+            <div class="project-header">
+                <div class="project-number">
+                    <i class="fas fa-hammer"></i>
+                    <span>Project ${newProjectNumber}</span>
+                </div>
+                <div class="project-optional">Optional</div>
+            </div>
+            
+            <div class="project-content">
+                <div class="project-basic-info">
+                    <div class="input-group">
+                        <label for="project${newProjectNumber}Name">Project Name</label>
+                        <input type="text" id="project${newProjectNumber}Name" name="project${newProjectNumber}Name" 
+                               placeholder="e.g., Kitchen Renovation, Bathroom Remodel">
+                    </div>
+                    <div class="input-group">
+                        <label for="project${newProjectNumber}Category">Project Category</label>
+                        <select id="project${newProjectNumber}Category" name="project${newProjectNumber}Category">
+                            <option value="">Select category</option>
+                            <option value="kitchen">Kitchen</option>
+                            <option value="bathroom">Bathroom</option>
+                            <option value="exterior">Exterior</option>
+                            <option value="landscaping">Landscaping</option>
+                            <option value="electrical">Electrical Work</option>
+                            <option value="plumbing">Plumbing</option>
+                            <option value="hvac">HVAC</option>
+                            <option value="painting">Painting</option>
+                            <option value="roofing">Roofing</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="project-description">
+                    <label for="project${newProjectNumber}Description">Project Description</label>
+                    <textarea id="project${newProjectNumber}Description" name="project${newProjectNumber}Description" 
+                              placeholder="Describe what was done in this project..." 
+                              rows="3"></textarea>
+                </div>
+                
+                <div class="before-after-images">
+                    <div class="image-pair">
+                        <div class="before-image">
+                            <label>Before Image</label>
+                            <div class="image-upload-area compact">
+                                <input type="file" id="project${newProjectNumber}Before" name="project${newProjectNumber}Before" accept="image/*">
+                                <div class="upload-placeholder">
+                                    <i class="fas fa-image"></i>
+                                    <span>Before</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="after-image">
+                            <label>After Image</label>
+                            <div class="image-upload-area compact">
+                                <input type="file" id="project${newProjectNumber}After" name="project${newProjectNumber}After" accept="image/*">
+                                <div class="upload-placeholder">
+                                    <i class="fas fa-image"></i>
+                                    <span>After</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-actions">
+                    <button type="button" class="remove-project-btn" onclick="this.closest('.project-card').remove()">
+                        <i class="fas fa-trash"></i> Remove Project
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+
+    // Insert the new project at the end of the projects container
+projectsList.insertAdjacentHTML('beforeend', projectHTML);
+
+    // Setup file inputs for new project
+    const newProjectCard = projectsList.querySelector('.project-card:nth-last-child(2)');
+    const beforeFileInput = newProjectCard.querySelector(`input[name="project${newProjectNumber}Before"]`);
+    const afterFileInput = newProjectCard.querySelector(`input[name="project${newProjectNumber}After"]`);
+    
+    // Setup file input listeners
+    if (window.templateBuilder) {
+        window.templateBuilder.setupSingleFileInput(beforeFileInput);
+        window.templateBuilder.setupSingleFileInput(afterFileInput);
+    }
+
+    // Show success message
+    if (window.templateBuilder) {
+        window.templateBuilder.showNotification('New project added!', 'success');
+    }
+    
+    // Scroll to new project
+    newProjectCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    
+    console.log('New project added successfully!');
+}
